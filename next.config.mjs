@@ -3,7 +3,7 @@ import { redirects } from "./redirects.js";
 const nextConfig = {
   reactStrictMode: true,
 
-  transpilePackages: ["mui-tel-input", "axios"],
+  transpilePackages: ["mui-tel-input", "axios", "js-cookie"],
 
   experimental: {
     serverComponentsExternalPackages: [], // Keep this empty to force bundling
