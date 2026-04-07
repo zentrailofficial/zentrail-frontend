@@ -5,7 +5,7 @@
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": ".open-next/assets",
-    "binding": "MY_ASSETS"
+    "binding": "ASSETS"
   },
   "vars": {
     "NEXT_PUBLIC_BASE_URL": "https://zentrail-backend-prod.onrender.com/api/",
