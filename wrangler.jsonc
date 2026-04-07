@@ -5,6 +5,12 @@
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": ".open-next/assets",
-    "binding": "ASSETS"
-  }
+    "binding": "MY_ASSETS"
+  },
+  "vars": {
+    "NEXT_PUBLIC_BASE_URL": "https://zentrail-backend-prod.onrender.com/api/",
+    "NEXT_PUBLIC_SITE_URL": "https://www.zentrail.in",
+    "NEXT_PUBLIC_OPENWEATHER_API_KEY": "519c752a413e6e267c0899555dc0e14d",
+    "NEXT_PUBLIC_GA_ID": "G-KYC3JQVG7Q"
+  },
 }
