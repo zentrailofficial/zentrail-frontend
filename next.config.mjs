@@ -4,6 +4,10 @@ const nextConfig = {
   reactStrictMode: true,
 
   transpilePackages: ["mui-tel-input"],
+  experimental: {
+    // This tells Next.js to bundle these specifically for the Edge/Worker
+    serverComponentsExternalPackages: ["axios", "sharp", "plaiceholder"],
+  },
 
   images: {
     minimumCacheTTL: 31536000,
