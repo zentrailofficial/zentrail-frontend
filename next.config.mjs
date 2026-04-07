@@ -3,10 +3,10 @@ import { redirects } from "./redirects.js";
 const nextConfig = {
   reactStrictMode: true,
 
-  transpilePackages: ["mui-tel-input"],
+  transpilePackages: ["mui-tel-input", "axios"],
+
   experimental: {
-    // This tells Next.js to bundle these specifically for the Edge/Worker
-    serverComponentsExternalPackages: ["axios", "sharp", "plaiceholder"],
+    serverComponentsExternalPackages: [], // Keep this empty to force bundling
   },
 
   images: {
