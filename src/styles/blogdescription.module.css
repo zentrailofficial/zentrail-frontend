@@ -1,0 +1,136 @@
+
+
+.descriptionContent {
+  font-family: "DM Sans", sans-serif;
+}
+.descriptionContent img {
+  margin: 20px 0px !important;
+  width: 50%;
+  margin: auto;
+}
+.descriptionContent span{
+  color: #4d5d60 !important;
+}
+.descriptionContent h1 span{
+  color: #111 !important;
+}
+.descriptionContent h2 span{
+  color: #111 !important;
+}
+.descriptionContent h3 span{
+  color: #111 !important;
+}
+.descriptionContent h4 span{
+  color: #111 !important;
+}
+.descriptionContent h5 span{
+  color: #111 !important;
+}
+.descriptionContent h6 span{
+  color: #111 !important;
+}
+
+
+.descriptionContent h1{
+  font-size: 24px;
+  font-weight: 500;
+}
+.descriptionContent ul li{
+  list-style: disc;
+  color: #4d5d60 !important;
+  margin-left: 20px;
+}
+/* .descriptionContent b{
+  font-weight: 900 !important;
+} */
+@media (min-width: 640px) {
+  .descriptionContent h1{
+    font-size: 28px;
+  }
+}
+@media (min-width: 768px) {
+  .descriptionContent h1 {
+    font-size: 32px;
+  }
+
+}
+@media (max-width: 568px) {
+ 
+  .descriptionContent img {
+  margin: 20px 0px !important;
+  width: 100%;
+  margin: auto;
+}
+}
+@media (min-width: 992px) {
+  .descriptionContent h1 {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1280px) {
+  .descriptionContent h1 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1536px) {
+  .descriptionContent h1 {
+    font-size: 44px;
+  }
+}
+
+.descriptionContent h2{
+  font-weight:600;
+  color: #000D1F;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+@media (min-width: 640px) {
+  .descriptionContent h2{
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .descriptionContent h2{
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .descriptionContent h2{
+    font-size: 32px;
+    line-height: 35px;
+  }
+
+}
+
+.descriptionContent h3 {
+  font-weight:500;
+  color: #000D1F;
+  font-size: 22px;
+  line-height:25px;
+}
+@media (min-width: 640px) {
+  .descriptionContent h3 {
+    font-size: 22px;
+    line-height: 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  .descriptionContent h3 {
+    font-size: 26px;
+    line-height: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .descriptionContent h3 {
+    font-size: 30px;
+    line-height: 44px;
+  }
+
+}

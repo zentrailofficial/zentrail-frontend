@@ -1,0 +1,14 @@
+.aboutbg{
+    background-image: url("/about/aboutbg.png");
+background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+    margin-top: 20px;
+}
+.aboutsection3bg{
+     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("/about/aboutbg1.webp");
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+    /* margin-top: 20px; */
+}
