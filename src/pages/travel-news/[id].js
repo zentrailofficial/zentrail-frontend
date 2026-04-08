@@ -83,7 +83,6 @@ export async function getStaticPaths() {
   );
   const newsPosts = await res.json();
 
-  console.log("API Response:", newsPosts);
   const paths = newsPosts?.blogs?.map((post) => ({
     params: { id: post.uid },
   }));
