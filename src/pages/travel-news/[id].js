@@ -82,13 +82,15 @@ export async function getStaticPaths() {
     `${BASE_URL_API}blogs/all/travel?type=news&status=Published`,
   );
   const newsPosts = await res.json();
+
+  console.log("API Response:", newsPosts);
   const paths = newsPosts?.blogs?.map((post) => ({
     params: { id: post.uid },
   }));
 
   return {
     paths: paths,
-    fallback: false,
+    fallback: "blocking",
   };
 }
 
