@@ -44,9 +44,12 @@ const UpcommingTrips = ({ upcommingTrips }) => {
 
   return (
     <div className="bg-[#DEF2FC]">
+      <h1 className="responsiveheading2 dm_sans  text-center pt-5">
+        Group Tours & Weekend Trips from Delhi
+      </h1>
       <div className="custom-container py-6 md:py-10">
         <div className="flex justify-between flex-wrap gap-3 items-center">
-          <h2 className="responsiveheading2 dm_sans">{`Upcoming Trips`}</h2>
+          <h2 className="responsiveheading2 dm_sans">{`Upcoming Tour Packages`}</h2>
           <div className="flex  gap-5">
             <button
               aria-label="trek"

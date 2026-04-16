@@ -21,6 +21,7 @@ const SEO = ({
   isHomePage = false,
   isBlogList = false,
   blogPosts = [],
+  externalSchemas = [],
 }) => {
   const router = useRouter();
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.zentrail.in";
@@ -57,7 +58,10 @@ const SEO = ({
     });
   } else if (router.asPath !== "/") {
     // If not homepage and no custom items, add current page
-    const currentPageName = pageName || decodeURIComponent(router.asPath.split("/").filter(Boolean).pop()) || "Page";
+    const currentPageName =
+      pageName ||
+      decodeURIComponent(router.asPath.split("/").filter(Boolean).pop()) ||
+      "Page";
     breadcrumbList.push({
       "@type": "ListItem",
       position: 2,
@@ -133,7 +137,7 @@ const SEO = ({
           "https://www.pinterest.com/zentrailofficial/",
           "https://www.youtube.com/@Zentrail-official",
         ],
-        geo:{
+        geo: {
           "@type": "GeoCoordinates",
           latitude: "28.6217",
           longitude: "77.0300",
@@ -245,7 +249,8 @@ const SEO = ({
                   url: "https://www.zentrail.in",
                 },
                 description: blog.description || "",
-                image: blog.featuredImage?.url || "https://www.zentrail.in/logo.png",
+                image:
+                  blog.featuredImage?.url || "https://www.zentrail.in/logo.png",
               })),
             },
           ]
@@ -301,7 +306,9 @@ const SEO = ({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData),
+          __html: JSON.stringify(
+            externalSchemas.length ? externalSchemas : structuredData,
+          ),
         }}
       />
     </Head>

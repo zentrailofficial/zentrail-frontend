@@ -59,8 +59,8 @@ const slug = (val) => {
 const MoodBasedJourneys = ({ Moodbasejourney }) => {
   return (
     <div className="custom-container py-6 md:py-10">
-      <h2 className="responsiveheading2 dm_sans">{`Mood-Based Journeys`}</h2>
-      <p className="responsive-text mt-1 dm_sans text-[#4D5D60]">{`Choose a trail based on how you feel today. Because the right journey begins with the right state of mind.`}</p>
+      <h2 className="responsiveheading2 dm_sans">{`Find Trips by Travel Style `}</h2>
+      <p className="responsive-text mt-1 dm_sans text-[#4D5D60]">{`Not sure where to go? Pick your travel style and discover trips that match.`}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 gap-4">
         {Moodbasejourney?.map((val, i) => (
           <Link

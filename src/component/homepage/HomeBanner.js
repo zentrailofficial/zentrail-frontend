@@ -5,8 +5,6 @@ import {
   MdOutlineArrowForwardIos,
 } from "react-icons/md";
 import Image from "next/image";
-
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import LinkButton from "@/comman-component/LinkButtton/LinkButton";
 
@@ -15,8 +13,8 @@ const bannnerList = [
     id: 1,
     image: "/homepage/tirthan.png",
     discription:
-      " Experience Jibhi’s Mini Thailand vibes, Shoja’s dreamy sunsets, and Rahgarh Fort’s ancient charm — all wrapped into one magical Tirthan Valley weekend getaway.",
-    title: "Dive into the charm of Jibhi’s “Mini Thailand“",
+      " Weekend escape from Delhi. Explore Jibhi, Shoja & Jalori Pass. Starting ₹6,499.",
+    title: "Tirthan Valley & Jibhi Weekend Trip",
     caption: " Tirthan Valley Trip - A weekend Getaway",
     goesto: "trail/tirthan-valley-tour",
   },
@@ -24,17 +22,16 @@ const bannnerList = [
     id: 2,
     image: "/homepage/homebanner1.webp",
     discription:
-      "Seek thrill in alpine adventures, glide above mountains, chase paragliding adventures & high-altitude expedition tours.",
-    title: "Explore Adventure Travel in India",
+      "Bir Billing paragliding & Rishikesh rafting. Book adventure trips from Delhi",
+    title: "Adventure Tours & Paragliding",
     caption: "Thrill Seekers",
     goesto: "/travel-by-mood/for-adventure",
   },
   {
     id: 3,
     image: "/homepage/homebanner2.webp",
-    discription:
-      "Rediscover balance in soulful retreats, escape to tranquil hideaways, recharge with wellness travel & mindful destinations.",
-    title: "Find Peaceful Journeys for Mind & Soul",
+    discription: "Quiet Himalayan escapes. Wellness stays away from crowds.",
+    title: "Peaceful Retreats & Getaways",
     caption: "Soulful Escapes",
     goesto: "/travel-by-mood/peace-and-calm",
   },
@@ -42,8 +39,8 @@ const bannnerList = [
     id: 4,
     image: "/homepage/homebanner3.webp",
     discription:
-      " Connect with nature under starry skies, camp in serene tents, explore offbeat trekking trails and eco-retreat escapes.",
-    title: " Offbeat Camping & Trekking Trails",
+      " Camp under starry skies. Trek offbeat trails in Himachal & Uttarakhand.",
+    title: "Camping & Trekking Tours",
     caption: "Nature Connect",
     goesto: "/travel-by-mood/offbeat-trips-in-india",
   },
@@ -51,11 +48,9 @@ const bannnerList = [
 
 const HomeBanner = () => {
   const splideRef = useRef(null);
-  const router = useRouter();
 
   return (
     <div className="relative overflow-hidden w-full h-[350px] sm:h-[370px] md:h-[500px]">
-      <h1 className="sr-only">{`Find Journeys That Match Your Soul - Travel By Mood`}</h1>
       <Splide
         ref={splideRef}
         options={{
@@ -102,7 +97,7 @@ const HomeBanner = () => {
                   >
                     {val.caption}
                   </p>
-                  <h2 className="responsive-heading dm_sans">{val.title}</h2>
+                  <p className="responsive-heading dm_sans">{val.title}</p>
                   <p className="responsive-text mt-3 mb-5">{val.discription}</p>
                   <Link href={val.goesto}>
                     <LinkButton

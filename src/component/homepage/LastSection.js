@@ -11,16 +11,16 @@ const LastSection = () => {
         <div className="grid grid-cols-12 gap-5  sm:gap-11 items-center pt-11">
           <div className="col-span-12 sm:col-span-6 md:col-span-7 dm_sans pr-0 md:pr-28 lg:pr-48">
             <div>
-              <h2 className="responsiveheading2 font-medium text-[#1A2E33] mb-3  ">
-                {`Your Mood Knows the Way.`}{" "}
-                <span className="text-[#37863F]">{` Let’s Find Your Trail.`}</span>
-              </h2>
+              <h3 className="responsiveheading2 font-medium text-[#1A2E33] mb-3  ">
+                {`Ready to Explore? `}{" "}
+                <span className="text-[#37863F]">{` Book Your Trip Today.`}</span>
+              </h3>
             </div>
-            <p className="responsive-text  text-[#4D5D60]">{`Reconnect with yourself, rediscover India, and travel the way you feel.`}</p>
+            <p className="responsive-text  text-[#4D5D60]">{`Join 5000+ travelers who've explored Himachal & Uttarakhand with us.`}</p>
           </div>
           <div className="col-span-12 sm:col-span-6 md:col-span-5">
             <Link href="/upcoming-trips">
-              <LinkButton text="Start My Mood Journey" />
+              <LinkButton text="Browse All Packages" />
             </Link>
           </div>
         </div>
