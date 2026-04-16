@@ -3,9 +3,6 @@ import { redirects } from "./redirects.js";
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true, // 1 year in seconds
-  formats: ["image/avif", "image/webp"], // AVIF = best compression
-  deviceSizes: [640, 750, 828, 1080],
-  imageSizes: [16, 32, 48, 64, 96, 128, 160, 240],
 
   transpilePackages: ["mui-tel-input"],
   bundlePagesRouterDependencies: true,
@@ -16,6 +13,9 @@ const nextConfig = {
 
   images: {
     minimumCacheTTL: 31536000,
+    formats: ["image/avif", "image/webp"], // AVIF = best compression
+    deviceSizes: [640, 750, 828, 1080],
+    imageSizes: [16, 32, 48, 64, 96, 128, 160, 240],
     remotePatterns: [
       {
         protocol: "https",
