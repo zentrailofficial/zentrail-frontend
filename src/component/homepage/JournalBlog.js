@@ -38,14 +38,13 @@ const JournalBlog = ({ blogs }) => {
   return (
     <div className="custom-container py-6 md:py-10 dm_sans">
       <h2 className="responsiveheading2 text-center mb-1.5">
-        {`  From the ZenTrail Journal`}
+        {`Travel Guides & Tips`}
       </h2>
       <p className="responsive-text text-[#4D5D60] text-center mb-4">
         {` Travel tips, soulful stories, and guides to India’s hidden gems.`}
       </p>
       <Splide
         ref={splideRef}
-
         options={{
           // type: "loop",
           perPage: 4,
@@ -65,9 +64,11 @@ const JournalBlog = ({ blogs }) => {
       >
         {blogs?.map((val, i) => (
           <SplideSlide key={i}>
-            <div className=" py-5 m-3  border border-[#7A9195]   rounded-[10px]    transition-all duration-300 ease-in-out 
+            <div
+              className=" py-5 m-3  border border-[#7A9195]   rounded-[10px]    transition-all duration-300 ease-in-out 
               hover:-translate-y-2 hover:scale-[1.02]  hover:bg-[#DEF2FC] hover:shadow-lg  focus:-translate-y-2 focus:scale-[1.02] 
-              focus:bg-[#DEF2FC] focus:shadow-lg  active:scale-[0.98]">
+              focus:bg-[#DEF2FC] focus:shadow-lg  active:scale-[0.98]"
+            >
               <BlogCard key={i} blogData={val} border={false} />
             </div>
           </SplideSlide>

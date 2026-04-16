@@ -44,7 +44,7 @@ const HomeCountryList = ({ allState }) => {
           ))}
 
           <h2 className="responsiveheading2  w-[200px] md:w-[260px] dm_sans text-center absolute bottom-[80px] left-1/2 -translate-x-1/2">
-            {`Explore India's Regions`}
+            {`Tour Packages by Region`}
           </h2>
           <div className="absolute bottom-[20px] left-1/2 -translate-x-1/2">
             <Link href="/travel-by-region">

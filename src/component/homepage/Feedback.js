@@ -91,7 +91,7 @@ const Feedback = ({ msg }) => {
     <div className="py-6 md:py-10 bg-[#DEF2FC]">
       <div className="custom-container flex flex-col items-center justify-center  gap-7 sm:gap-11">
         <div className=" text-center">
-          <h2 className="responsiveheading2 font-bold mb-2">{` What Our Travelers Say`}</h2>
+          <h2 className="responsiveheading2 font-bold mb-2">{` Traveler Reviews`}</h2>
           <p
             ref={contentRef}
             className={`responsive-text text-[#4D5D60] transition-all duration-300 ease-in-out ${
