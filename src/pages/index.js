@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import FAQ from "@/comman-component/commonFaq";
 import SEO from "@/comman-component/Seo";
 import Feedback from "@/component/homepage/Feedback";
