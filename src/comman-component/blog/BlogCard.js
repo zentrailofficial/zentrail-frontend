@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const BlogCard = ({ blogData, border , path}) => {
+const BlogCard = ({ blogData, border, path }) => {
   const { featuredImage, createdAt, title, uid } = blogData;
 
   const formatdate = (createdAt) => {
@@ -14,7 +14,7 @@ const BlogCard = ({ blogData, border , path}) => {
 
   return (
     <Link
-      href={`/${path||"blogs"}/${uid}`}
+      href={`/${path || "blogs"}/${uid}`}
       className={`${
         border && "border-[1.2px]"
       } border-[#7A9195] rounded-[10px]  py-5 h-fit group-hover:shadow group-focus:shadow group-active:shadow 
@@ -52,7 +52,9 @@ const BlogCard = ({ blogData, border , path}) => {
         </div>
 
         <div className="px-3">
-          <h4 className="dm_sans font-semibold mb-2 line-clamp-2 h-[45px]">{title}</h4>
+          <h3 className="dm_sans font-semibold mb-2 line-clamp-2 h-[45px]">
+            {title}
+          </h3>
           <p className="dm_sans text-[#555] text-base line-clamp-2 h-[45px]">
             {blogData?.meta?.description}
           </p>

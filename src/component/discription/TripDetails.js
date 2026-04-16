@@ -7,15 +7,10 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { FaWhatsapp } from "react-icons/fa";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import ThankyouPopup from "@/comman-component/ThankyouPopup/ThankyouPopup";
 import { Dialog, DialogContent } from "@mui/material";
 
-const TripDetailsContent = {
-  heading: "Overview/Trip Details",
-  description: `“Hidden high in the Himalayas, this trek takes you across changing worlds- from lush valleys and forests to stark, glacial landscapes. Every step opens to new panoramas, making it one of the most dramatic crossovers in the mountains. If you’re seeking raw adventure with breathtaking views, this journey is worth every stride.”`,
-  exploreLink: "Explore more...",
-};
 const TripDetails = ({ description }) => {
   const [openn, setOpenn] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -28,7 +23,7 @@ const TripDetails = ({ description }) => {
     if (!el) return;
 
     // Estimate line height based on computed styles
-    const lineHeight = parseFloat(getComputedStyle(el).lineHeight || '24');
+    const lineHeight = parseFloat(getComputedStyle(el).lineHeight || "24");
     const maxHeight = lineHeight * 10; // 10 lines
 
     const checkClamped = () => {
@@ -44,7 +39,6 @@ const TripDetails = ({ description }) => {
 
     return () => resizeObserver.disconnect();
   }, [description]);
-
 
   const handleClosee = () => {
     setOpenn(false);
@@ -66,7 +60,6 @@ const TripDetails = ({ description }) => {
         setOpenn(false);
       }, 3000);
       reset();
-
     } catch (error) {
       console.log(error?.response?.data?.message);
       toast.error(error?.response?.data?.message);
@@ -86,7 +79,7 @@ const TripDetails = ({ description }) => {
                 <div className="text-[#1A2E33]">
                   <div
                     ref={contentRef}
-                    className={`responsive-text quillistEditor text-[#1A2E33] transition-all duration-300 ease-in-out ${!expanded ? 'line-clamp-10' : ''}`}
+                    className={`responsive-text quillistEditor text-[#1A2E33] transition-all duration-300 ease-in-out ${!expanded ? "line-clamp-10" : ""}`}
                     dangerouslySetInnerHTML={{ __html: description }}
                   />
                   {isClamped && (
@@ -94,10 +87,11 @@ const TripDetails = ({ description }) => {
                       className="text-blue-600 mt-2 hover:underline focus:outline-none cursor-pointer"
                       onClick={() => setExpanded(!expanded)}
                     >
-                      {expanded ? 'Explore Less' : 'Explore More'}
+                      {expanded ? "Explore Less" : "Explore More"}
                     </button>
                   )}
-                </div>              </div>
+                </div>{" "}
+              </div>
               {/* <p className="responsive-text  text-[#1A2E33] ">{description}</p> */}
               {/* <span className="underline text-base">
                 {TripDetailsContent.exploreLink}
@@ -127,7 +121,10 @@ const TripDetails = ({ description }) => {
                 />
 
                 <div className="flex flex-col relative">
-                  <label htmlFor="phoneNo" className="dm_sans font-medium text-[14px] leading-[25px]">
+                  <label
+                    htmlFor="phoneNo"
+                    className="dm_sans font-medium text-[14px] leading-[25px]"
+                  >
                     Mobile Number
                   </label>
                   <Controller
@@ -188,7 +185,11 @@ const TripDetails = ({ description }) => {
                 />
                 <div className="flex items-center gap-6">
                   <div>
-                    <CustomButton aria-label="Submit" disabled={isSubmitting} loading={isSubmitting}>
+                    <CustomButton
+                      aria-label="Submit"
+                      disabled={isSubmitting}
+                      loading={isSubmitting}
+                    >
                       Submit
                     </CustomButton>
                     <Dialog

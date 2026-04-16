@@ -4,16 +4,11 @@ import TextInput from "@/comman-component/TextInput";
 import formStyle from "@/comman-component/TextInput/inputStyle";
 import { useAuth } from "@/context/AuthContext";
 import { apiClient } from "@/lib/api-client";
-import { Checkbox, FormControlLabel, IconButton } from "@mui/material";
-import Cookies from "js-cookie";
+import { Checkbox, FormControlLabel } from "@mui/material";
 import { MuiTelInput } from "mui-tel-input";
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
-import { MdAlignHorizontalRight } from "react-icons/md";
-import { toast } from 'react-toastify';
-// import { GoogleLogin } from "@react-oauth/google";
-// import { jwtDecode } from "jwt-decode";
-// import axios from "axios";
+import { toast } from "react-toastify";
 
 const SignupForm = () => {
   const { login } = useAuth();
@@ -22,7 +17,7 @@ const SignupForm = () => {
     control,
     reset,
     watch,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
   } = useForm();
 
   const onSubmit = async (data) => {
@@ -30,26 +25,11 @@ const SignupForm = () => {
       const response = await apiClient.post("userAuth/travel/signup", data);
       reset();
       login(response);
-      // toast.success("Signup successful (Logged in)");
     } catch (err) {
       console.log("API Error:", err?.response?.data?.message);
       toast.error(err?.response?.data?.message);
     }
   };
-
-  // const handleSuccess = async (credentialResponse) => {
-  //   const token = credentialResponse.credential;
-  //   const decoded = jwtDecode(token); // ✅ use jwtDecode
-  //   console.log("Google ID Token:", token);
-  //   console.log("Decoded Data:", decoded);
-
-  //   try {
-  //     const res = await apiClient.post("userAuth/travel/signup-google", { token });
-  //     console.log("Backend response:", res.data);
-  //   } catch (err) {
-  //     console.error("Backend error:", err);
-  //   }
-  // };
 
   return (
     <>
@@ -122,33 +102,7 @@ const SignupForm = () => {
             )}
           />
         </div>
-        {/* <TextInput
-          control={control}
-          name="mobile"
-          placeholder="For verification & updates"
-          label="Mobile Number"
-          rules={{
-            required: "Mobile number is required",
-            pattern: {
-              value: /^[0-9]{10}$/,
-              message: "Enter a valid 10-digit mobile number",
-            },
-          }}
-          inputProps={{
-            max: 10,
-            inputMode: "numeric",
-            pattern: "[0-9]*",
-          }}
-          onKeyDown={(e) => {
-            if (
-              !/[0-9]/.test(e.key) &&
-              e.key !== "Backspace" &&
-              e.key !== "Tab"
-            ) {
-              e.preventDefault();
-            }
-          }}
-        /> */}
+
         <TextInput
           control={control}
           type="password"
@@ -210,11 +164,6 @@ const SignupForm = () => {
           >
             {`Let’s Go!`}
           </CustomButton>
-
-          {/* <GoogleLogin
-            onSuccess={handleSuccess}
-            onError={() => console.log("Login Failed")}
-          /> */}
         </div>
       </form>
     </>

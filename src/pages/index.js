@@ -4,7 +4,9 @@ import Feedback from "@/component/homepage/Feedback";
 import HomeAboutUs from "@/component/homepage/HomeAboutUs";
 import HomeBanner from "@/component/homepage/HomeBanner";
 import JournalBlog from "@/component/homepage/JournalBlog";
-import LastSection from "@/component/homepage/LastSection";
+const LastSection = dynamic(() => import("@/component/homepage/LastSection"), {
+  ssr: false,
+});
 import HomeCountryList from "@/component/homepage/HomeCountryList";
 import MoodBasedJourneys from "@/component/homepage/MoodBasedJourneys";
 import PerfectTrial from "@/component/homepage/PerfectTrial";
@@ -41,9 +43,12 @@ const faqData = [
   },
 ];
 
-
-
-export default function Home({ upcommingTrips, Moodbasejourney, allState, blogs }) {
+export default function Home({
+  upcommingTrips,
+  Moodbasejourney,
+  allState,
+  blogs,
+}) {
   return (
     <>
       <SEO
@@ -57,10 +62,9 @@ export default function Home({ upcommingTrips, Moodbasejourney, allState, blogs 
         robots="index, follow"
         isHomePage={true}
       />
-      <div
-      >
+      <div>
         <HomeBanner />
-          <div id="upcomming">
+        <div id="upcomming">
           <UpcommingTrips upcommingTrips={upcommingTrips} />
         </div>
         <MoodBasedJourneys Moodbasejourney={Moodbasejourney} />
@@ -79,25 +83,25 @@ export default function Home({ upcommingTrips, Moodbasejourney, allState, blogs 
 
 export async function getStaticProps() {
   const res = await axios.get(
-    `${BASE_URL_API}travel-packages/travel/getalltravelpackage?page=1&limit=4`
+    `${BASE_URL_API}travel-packages/travel/getalltravelpackage?page=1&limit=4`,
   );
   var upcommingTrips = res?.data?.data || [];
 
-upcommingTrips = upcommingTrips.sort((a, b) => {
-  if (a.title === "Dev Diwali Tour– Varanasi 2025") return -1;
-  if (b.title === "Dev Diwali Tour– Varanasi 2025") return 1;
-  return 0;
-});
+  upcommingTrips = upcommingTrips.sort((a, b) => {
+    if (a.title === "Dev Diwali Tour– Varanasi 2025") return -1;
+    if (b.title === "Dev Diwali Tour– Varanasi 2025") return 1;
+    return 0;
+  });
   const res2 = await axios.get(`${BASE_URL_API}Moodbasejourney`);
   const Moodbasejourney = res2?.data?.data;
 
   const res3 = await axios.get(
-    `${BASE_URL_API}travel-packages/travel/all-states`
+    `${BASE_URL_API}travel-packages/travel/all-states`,
   );
   const allState = res3?.data?.states;
 
   const blog = await axios.get(
-    `${BASE_URL_API}blogs/all/travel?type=blog&page=1&limit=4`
+    `${BASE_URL_API}blogs/all/travel?type=blog&page=1&limit=4`,
   );
   const blogs = blog?.data?.blogs;
 

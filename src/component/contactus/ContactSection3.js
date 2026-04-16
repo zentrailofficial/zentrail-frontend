@@ -1,43 +1,39 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import CustomButton from "@/comman-component/customButton";
 import Link from "next/link";
 import ConnectUsModal from "@/comman-component/connectUsModal/ConnectUsModal";
 import { useRouter } from "next/navigation";
 import LinkButton from "@/comman-component/LinkButtton/LinkButton";
 
 const ContactSection3 = () => {
-  const router = useRouter()
   const data = [
     {
       id: 1,
       image: "/contact/contact5.svg",
       title: "Instagram",
-      url: "https://www.instagram.com/zentrailofficial/"
+      url: "https://www.instagram.com/zentrailofficial/",
     },
     {
       id: 2,
       image: "/contact/contact6.svg",
       title: "YouTube",
-      url: "https://www.youtube.com/@Zentrail-official"
+      url: "https://www.youtube.com/@Zentrail-official",
     },
     {
       id: 3,
       image: "/contact/contact7.svg",
       title: "Facebook",
-      url: "https://www.facebook.com/profile.php?id=61578691529317"
+      url: "https://www.facebook.com/profile.php?id=61578691529317",
     },
     {
       id: 4,
       image: "/contact/contact8.svg",
       title: "Pinterest",
-      url: "https://www.pinterest.com/zentrailofficial/"
+      url: "https://www.pinterest.com/zentrailofficial/",
     },
   ];
   const [open, setOpen] = useState(false);
-  const handleTripPlanning = () => {
-    setOpen(true);
-  }
+
   return (
     <>
       <div className="bg-[#DEF2FCBD]">
@@ -53,7 +49,7 @@ const ContactSection3 = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="items-center  flex flex-col"
-                  // className="hover:opacity-70 cursor-pointer transition-opacity relative w-[28px] h-[28px] sm:w-[33px] sm:h-[33px]"
+                    // className="hover:opacity-70 cursor-pointer transition-opacity relative w-[28px] h-[28px] sm:w-[33px] sm:h-[33px]"
                   >
                     <Image
                       src={val.image}
@@ -82,8 +78,6 @@ const ContactSection3 = () => {
         <Link href="/upcoming-trips">
           <LinkButton text="Start Planning My ZenTrail" />
         </Link>
-        {/* <CustomButton width={"auto"} borderRadius="12px" onClick={()=>router.push("/upcoming-trips")}>{`Start Planning My ZenTrail`}
-        </CustomButton> */}
       </div>
     </>
   );

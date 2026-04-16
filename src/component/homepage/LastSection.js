@@ -1,11 +1,10 @@
-import CustomButton from "@/comman-component/customButton";
 import LinkButton from "@/comman-component/LinkButtton/LinkButton";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 const LastSection = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div className="pb-4 mt-[-30px] sm:mt-0 md:py-6 bg-[url('/homepage/lastsection.png')] bg-cover bg-center ">
       <div className="custom-container">
@@ -20,17 +19,9 @@ const LastSection = () => {
             <p className="responsive-text  text-[#4D5D60]">{`Reconnect with yourself, rediscover India, and travel the way you feel.`}</p>
           </div>
           <div className="col-span-12 sm:col-span-6 md:col-span-5">
-             <Link href="/upcoming-trips">
-                <LinkButton text="Start My Mood Journey" />
-              </Link>
-            {/* <CustomButton
-              ariaLabel={"Start My Mood Journey"}
-              onClick={() => router.push("/upcoming-trips")}
-              borderRadius="12px"
-              width={{ sm: "290px", md: "340px", lg: "380px" }}
-            >
-              {` Start My Mood Journey`}
-            </CustomButton> */}
+            <Link href="/upcoming-trips">
+              <LinkButton text="Start My Mood Journey" />
+            </Link>
           </div>
         </div>
       </div>
