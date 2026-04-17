@@ -21,7 +21,6 @@ const Footer = () => {
       { label: "Blogs", url: "/blogs" },
       { label: "News", url: "/travel-news" },
       { label: "Gallery", url: "/gallery" },
-
     ],
 
     contactInfo: {
@@ -71,7 +70,7 @@ const Footer = () => {
     setloading(true);
     try {
       const categorys = await apiClient("category/travel/non-blog-categories");
-      const categorylist = categorys?.data?.slice(0, 5)
+      const categorylist = categorys?.data?.slice(0, 5);
       //       const submenu = categorylist?.map((item, i) => ({
       //         label: item.name,
       //         icon: array[i],
@@ -94,7 +93,7 @@ const Footer = () => {
         <div className="grid grid-cols-12 border-b border-gray-500 pb-8 gap-3.5  md:gap-4 lg:gap-8">
           <div className="col-span-12 sm:col-span-12  lg:col-span-5  lg:mr:28 xl:mr-32">
             <Link href="/">
-              <div className="relative w-[90px] sm:w-[110px] md:w-[118px] h-[100px] sm:h-[110px] md:h-[117px] mb-2 sm:mb-4 ">
+              <div className="relative w-[72px] h-[72px] sm:w-[110px] md:w-[118px] h-[100px] sm:h-[110px] md:h-[117px] mb-2 sm:mb-4 ">
                 <Image
                   src={footerData.brand.logo}
                   alt="ZEN TRAIL Logo"
@@ -106,19 +105,20 @@ const Footer = () => {
             <div className="text-lg md:text-xl font-bold font-responsive">
               <Link href="/">{footerData.brand.name}</Link>
             </div>
-            <p className="mt-5 text-[16px] footer_commanText font-responsive">
+            <p className="mt-5 text-[14px] footer_commanText font-responsive">
               {footerData.brand.description}
             </p>
           </div>
           <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-            <div className=" mb-2  text-[20px]  text-[(rgba(255, 255, 255, 1))] dm_sans">{`Quick Links`}</div>
-            <ol className=" list-inside space-y-1 text-[16px] text-[(rgba(255, 255, 255, 1))]">
+            <div className=" mb-2  text-[16px]  text-[(rgba(255, 255, 255, 1))] dm_sans">{`Quick Links`}</div>
+            <ol className=" list-inside space-y-1 text-[14px] text-[(rgba(255, 255, 255, 1))]">
               {footerData.quickLinks1.map((link, i) => (
                 <li key={i}>
                   <Link
                     href={link.url}
-                    className={`hover:underline  capitalize ${pathname === link.url ? "underline" : ""
-                      }`}
+                    className={`hover:underline  capitalize ${
+                      pathname === link.url ? "underline" : ""
+                    }`}
                   >
                     {link.label}
                   </Link>
@@ -127,20 +127,21 @@ const Footer = () => {
             </ol>
           </div>
           <div className="col-span-6 sm:col-span-3  lg:col-span-2">
-            <div className=" text-[20px] mb-2 dm_sans">{`Category`}</div>
+            <div className=" text-[16px] mb-2 dm_sans">{`Category`}</div>
             {loading ? (
               <p className="flex items-center gap-2">
                 <CircularProgress size={20} /> {`loading...`}
               </p>
             ) : (
-              <ol className=" list-inside space-y-1   text-[16px] text-[(rgba(255, 255, 255, 1))]">
+              <ol className=" list-inside space-y-1   text-[14px] text-[(rgba(255, 255, 255, 1))]">
                 {quickLinks2?.map((link, i) => {
                   return (
                     <li key={i}>
                       <Link
                         href={`${link.uid}`}
-                        className={`hover:underline capitalize ${pathname === link.link ? "underline" : ""
-                          }`}
+                        className={`hover:underline capitalize ${
+                          pathname === link.link ? "underline" : ""
+                        }`}
                       >
                         {link.name}
                       </Link>
@@ -151,7 +152,7 @@ const Footer = () => {
             )}
           </div>
           <div className="col-span-12 sm:col-span-5  lg:col-span-3 ">
-            <div className=" mb-1  sm:mb-5 text-[20px] dm_sans">{`Contact Info`}</div>
+            <div className=" mb-1  sm:mb-5 text-[16px] dm_sans">{`Contact Info`}</div>
             <div className="flex items-center gap-3.5 text-sm md:text-base font-responsive ">
               <div className="relative">
                 <IoLogoWhatsapp size={28} />
@@ -159,7 +160,7 @@ const Footer = () => {
               <Link
                 href={`https://wa.me/${footerData.contactInfo.phone.replace(
                   /\s/g,
-                  ""
+                  "",
                 )} `}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -238,8 +239,9 @@ const Footer = () => {
               <span key={i} className="flex items-center">
                 <Link
                   href={link.url}
-                  className={`hover:underline capitalize ${pathname === link.url ? "underline" : ""
-                    }`}
+                  className={`hover:underline capitalize ${
+                    pathname === link.url ? "underline" : ""
+                  }`}
                 >
                   {link.label}
                 </Link>

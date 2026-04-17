@@ -32,7 +32,7 @@ const PerfectTrial = () => {
       <div className="custom-container">
         <div className="grid grid-cols-12">
           <div className="col-span-12 text-center lg:text-start lg:col-span-3 md:p-6">
-            <h2 className="responsiveheading2 mb-3">{`Find Your Perfect Trip`}</h2>
+            <h2 className="responsiveheading2 dm_sans mb-3">{`Find Your Perfect Trip`}</h2>
             <p className="dm_sans text-[#4D5D60] text-[14px]">{`Filter by mood, season, duration, or travel style and uncover journeys that feel made just for you.`}</p>
           </div>
           <div className="col-span-12 lg:col-span-9 mt-5 lg:mt-0">

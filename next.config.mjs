@@ -2,7 +2,7 @@
 import { redirects } from "./redirects.js";
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true, // 1 year in seconds
+  swcMinify: true,
 
   transpilePackages: ["mui-tel-input"],
   bundlePagesRouterDependencies: true,

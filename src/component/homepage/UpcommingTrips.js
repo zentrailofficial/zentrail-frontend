@@ -54,7 +54,7 @@ const UpcommingTrips = ({ upcommingTrips }) => {
             <button
               aria-label="trek"
               onClick={() => filterTour("")}
-              className={`flex gap-2 items-center cursor-pointer dm_sans hover:text-black ${
+              className={`flex gap-2 items-center  cursor-pointer dm_sans hover:text-black ${
                 selected == "" ? "text-black" : "text-[#4D5875]"
               }`}
             >
@@ -106,7 +106,7 @@ const UpcommingTrips = ({ upcommingTrips }) => {
             <MiniLoader />
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-[50px] lg:gap-x-[110px] gap-y-15 mt-15 mb-8 pl-[20px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-[50px] lg:gap-x-[110px]  gap-y-15 mt-10 md:mt-15 mb-8 pl-[20px]">
             {data?.length > 0 ? (
               data.map((val, i) => {
                 return (

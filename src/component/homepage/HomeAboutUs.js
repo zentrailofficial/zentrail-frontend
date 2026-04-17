@@ -17,7 +17,7 @@ const HomeAboutUs = () => {
             />
           </div>
           <div className="w-full  flex flex-col justify-center gap-5">
-            <h2 className="responsiveheading2">{`About Us`}</h2>
+            <h2 className="responsiveheading2 dm_sans">{`About Us`}</h2>
             <p className="responsive-text text-[#1A2E33]">{`ZenTrail is a Delhi-based travel company offering tour packages to Himachal Pradesh, Uttarakhand, and Rajasthan. Founded by Girdhar Sharma in 2024, we specialize in offbeat group trips for young travelers. Over 5000+ travelers have explored with us.`}</p>
             <div>
               <Link href="/about-us">

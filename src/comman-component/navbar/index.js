@@ -157,7 +157,7 @@ export default function Navbar() {
     <div className="w-full bg-white shadow-sm h-[80px]  ">
       <HeadBar />
       <nav
-        className={`w-full bg-[#fff] shadow-sm fixed z-40  top-[40px] h-[80px] sm:h-[100px]
+        className={`w-full bg-[#fff] shadow-sm fixed z-40 top-[36px]  md:top-[40px] h-[80px] sm:h-[100px]
          ${
            isVisible
              ? "translate-y-0 transition-transform duration-100 ease-in-out"
