@@ -32,7 +32,7 @@ const PerfectTrial = () => {
       <div className="custom-container">
         <div className="grid grid-cols-12">
           <div className="col-span-12 text-center lg:text-start lg:col-span-3 md:p-6">
-            <h2 className="responsiveheading2 mb-3">{`Find your perfect trail`}</h2>
+            <h2 className="responsiveheading2 dm_sans mb-3">{`Find Your Perfect Trip`}</h2>
             <p className="dm_sans text-[#4D5D60] text-[14px]">{`Filter by mood, season, duration, or travel style and uncover journeys that feel made just for you.`}</p>
           </div>
           <div className="col-span-12 lg:col-span-9 mt-5 lg:mt-0">
@@ -57,16 +57,23 @@ const PerfectTrial = () => {
               aria-label="Explore More Trips"
             >
               {data.map((val, index) => (
-                <SplideSlide key={val.id} className="m-2"
+                <SplideSlide
+                  key={val.id}
+                  className="m-2"
                   role="group"
                   aria-roledescription="slide"
-                  aria-label={`${val.title} – Slide ${index + 1} of ${data.length}`}>
+                  aria-label={`${val.title} – Slide ${index + 1} of ${data.length}`}
+                >
                   <div className="m-2 flex justify-center">
-                    <div className=" group relative cursor-pointer w-[200px]  transition-transform duration-300 ease-in-out
-                        hover:-translate-y-2 focus:-translate-y-2 active:-translate-y-1">
+                    <div
+                      className=" group relative cursor-pointer w-[200px]  transition-transform duration-300 ease-in-out
+                        hover:-translate-y-2 focus:-translate-y-2 active:-translate-y-1"
+                    >
                       <div>
-                        <div className="m-auto w-[100px] aspect-square mb-[-20%] rounded-full bg-[#35C0F0] transition-all duration-300 ease-in-out
-                          group-hover:bg-[#37863F] group-focus:bg-[#37863F] group-active:bg-[#2E6F34]">
+                        <div
+                          className="m-auto w-[100px] aspect-square mb-[-20%] rounded-full bg-[#35C0F0] transition-all duration-300 ease-in-out
+                          group-hover:bg-[#37863F] group-focus:bg-[#37863F] group-active:bg-[#2E6F34]"
+                        >
                           <Image
                             src={val.image}
                             width={index === 1 ? 25 : index === 3 ? 30 : 35}
@@ -86,12 +93,14 @@ const PerfectTrial = () => {
                             group-hover:opacity-100 group-focus:opacity-100 group-active:opacity-100"
                           />
                         </div>
-                        <div className="bg-white shadow-sm rounded-[12px] h-[120px] p-5 w-[200px]
+                        <div
+                          className="bg-white shadow-sm rounded-[12px] h-[120px] p-5 w-[200px]
                           border border-transparent 
                           transition-all duration-300 ease-in-out
                           group-hover:shadow-none group-hover:border-[#37863F]
                           group-focus:shadow-none group-focus:border-[#37863F]
-                          group-active:shadow-none group-active:border-[#2E6F34]">
+                          group-active:shadow-none group-active:border-[#2E6F34]"
+                        >
                           <p className="dm_sans responsive-text text-center text-[#1A2E33] line-clamp-2">
                             {val.title}
                           </p>

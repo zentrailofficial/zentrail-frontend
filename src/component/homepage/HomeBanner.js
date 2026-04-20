@@ -5,8 +5,6 @@ import {
   MdOutlineArrowForwardIos,
 } from "react-icons/md";
 import Image from "next/image";
-import CustomButton from "@/comman-component/customButton";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import LinkButton from "@/comman-component/LinkButtton/LinkButton";
 
@@ -14,44 +12,45 @@ const bannnerList = [
   {
     id: 1,
     image: "/homepage/tirthan.png",
-    discription: " Experience Jibhi’s Mini Thailand vibes, Shoja’s dreamy sunsets, and Rahgarh Fort’s ancient charm — all wrapped into one magical Tirthan Valley weekend getaway.",
-    title: "Dive into the charm of Jibhi’s “Mini Thailand“",
+    discription:
+      " Weekend escape from Delhi. Explore Jibhi, Shoja & Jalori Pass. Starting ₹6,499.",
+    title: "Tirthan Valley & Jibhi Weekend Trip",
     caption: " Tirthan Valley Trip - A weekend Getaway",
-    goesto: "trail/tirthan-valley-tour"
+    goesto: "trail/tirthan-valley-tour",
   },
   {
     id: 2,
     image: "/homepage/homebanner1.webp",
-    discription: "Seek thrill in alpine adventures, glide above mountains, chase paragliding adventures & high-altitude expedition tours.",
-    title: "Explore Adventure Travel in India",
+    discription:
+      "Bir Billing paragliding & Rishikesh rafting. Book adventure trips from Delhi",
+    title: "Adventure Tours & Paragliding",
     caption: "Thrill Seekers",
-    goesto: "/travel-by-mood/for-adventure"
+    goesto: "/travel-by-mood/for-adventure",
   },
   {
     id: 3,
     image: "/homepage/homebanner2.webp",
-    discription: "Rediscover balance in soulful retreats, escape to tranquil hideaways, recharge with wellness travel & mindful destinations.",
-    title: "Find Peaceful Journeys for Mind & Soul",
+    discription: "Quiet Himalayan escapes. Wellness stays away from crowds.",
+    title: "Peaceful Retreats & Getaways",
     caption: "Soulful Escapes",
-    goesto: "/travel-by-mood/peace-and-calm"
+    goesto: "/travel-by-mood/peace-and-calm",
   },
   {
     id: 4,
     image: "/homepage/homebanner3.webp",
-    discription: " Connect with nature under starry skies, camp in serene tents, explore offbeat trekking trails and eco-retreat escapes.",
-    title: " Offbeat Camping & Trekking Trails",
+    discription:
+      " Camp under starry skies. Trek offbeat trails in Himachal & Uttarakhand.",
+    title: "Camping & Trekking Tours",
     caption: "Nature Connect",
-    goesto: "/travel-by-mood/offbeat-trips-in-india"
+    goesto: "/travel-by-mood/offbeat-trips-in-india",
   },
 ];
 
 const HomeBanner = () => {
   const splideRef = useRef(null);
-  const router = useRouter()
 
   return (
     <div className="relative overflow-hidden w-full h-[350px] sm:h-[370px] md:h-[500px]">
-      <h1 className="sr-only">{`Find Journeys That Match Your Soul - Travel By Mood`}</h1>
       <Splide
         ref={splideRef}
         options={{
@@ -67,7 +66,10 @@ const HomeBanner = () => {
         aria-label="Explore More Trips"
       >
         {bannnerList.map((val) => (
-          <SplideSlide key={val.id} className="w-full h-[350px] sm:h-[370px] md:h-[500px] relative overflow-hidden">
+          <SplideSlide
+            key={val.id}
+            className="w-full h-[350px] sm:h-[370px] md:h-[500px] relative overflow-hidden"
+          >
             <div className="w-full h-[350px] sm:h-[370px] md:h-[500px] relative overflow-hidden">
               {/* Background image */}
               <div className="w-full h-[350px] sm:h-[370px] md:h-[500px] relative">
@@ -89,17 +91,20 @@ const HomeBanner = () => {
               {/* Text content */}
               <div className="absolute inset-0">
                 <div className=" custom-container text-white flex-1 h-[300px] sm:h-[350px] md:h-[450px] flex flex-col justify-center select-text">
-                  <p style={{ fontFamily: "licorice" }} className="text-[25px] md:text-[60px] drop-shadow-md">
+                  <p
+                    style={{ fontFamily: "licorice" }}
+                    className="text-[25px] md:text-[60px] drop-shadow-md"
+                  >
                     {val.caption}
                   </p>
-                  <h2 className="responsive-heading dm_sans">{val.title}</h2>
-                  <p className="responsive-text mt-3 mb-5">
-                    {val.discription}
-                  </p>
+                  <p className="responsive-heading dm_sans">{val.title}</p>
+                  <p className="responsive-text mt-3 mb-5">{val.discription}</p>
                   <Link href={val.goesto}>
-                    <LinkButton text="Start Your Journey" className="bg-black" />
+                    <LinkButton
+                      text="Start Your Journey"
+                      className="bg-black"
+                    />
                   </Link>
-                  {/* <CustomButton ariaLabel={"Start Your Journey"} onClick={() => router.push(val.goesto)} color="#000" width={200} height={45} className="manrope">{`Start Your Journey`}</CustomButton> */}
                 </div>
               </div>
             </div>

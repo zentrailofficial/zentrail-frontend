@@ -1,11 +1,12 @@
 import Footer from "@/comman-component/footer";
 import Navbar from "@/comman-component/navbar";
 import React, { useEffect, useState } from "react";
-import ConnectUsModal from "@/comman-component/connectUsModal/ConnectUsModal";
-import CookiesPopup from "@/comman-component/cookies/cookies";
-
-
-
+const ConnectUsModal = React.lazy(
+  () => import("@/comman-component/connectUsModal/ConnectUsModal"),
+);
+const CookiesPopup = React.lazy(
+  () => import("@/comman-component/cookies/cookies"),
+);
 
 export default function Layout({ children }) {
   const [open, setOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function Layout({ children }) {
         if (!modalShown) {
           const timer = setTimeout(() => {
             setOpen(true);
-            localStorage.setItem("modalShown", "true"); 
+            localStorage.setItem("modalShown", "true");
           }, 7000);
 
           return () => clearTimeout(timer);
@@ -28,13 +29,13 @@ export default function Layout({ children }) {
       }
     }
   }, []);
-  
+
   return (
-    <div >
+    <div>
       <CookiesPopup />
       <Navbar></Navbar>
       <ConnectUsModal open={open} setOpen={setOpen} />
-      <main >{children}</main>
+      <main>{children}</main>
       <Footer></Footer>
     </div>
   );

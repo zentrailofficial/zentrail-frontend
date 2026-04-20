@@ -3,13 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { MdClose, MdOutlineMenu } from "react-icons/md";
-import CustomButton from "../customButton";
 import { usePathname, useRouter } from "next/navigation";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useAuth } from "@/context/AuthContext";
 import { apiClient } from "@/lib/api-client";
 import { FaArrowRightLong } from "react-icons/fa6";
-import NewspaperIcon from '@mui/icons-material/Newspaper';
 import LinkButton from "../LinkButtton/LinkButton";
 import HeadBar from "../headBar/HeadBar";
 
@@ -17,7 +15,6 @@ export default function Navbar() {
   const { user } = useAuth();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpen2, setIsOpen2] = useState(false);
   const [opensubmenu, setopensubmenu] = useState(false);
   const sidebarRef = useRef(null);
   const pathname = usePathname();
@@ -144,8 +141,8 @@ export default function Navbar() {
       });
       setMenuItems((prev) =>
         prev.map((menu) =>
-          menu.label === "Category" ? { ...menu, submenu } : menu
-        )
+          menu.label === "Category" ? { ...menu, submenu } : menu,
+        ),
       );
     } catch (error) {
       console.error("Error fetching categories:", error);
@@ -160,11 +157,12 @@ export default function Navbar() {
     <div className="w-full bg-white shadow-sm h-[80px]  ">
       <HeadBar />
       <nav
-        className={`w-full bg-[#fff] shadow-sm fixed z-40  top-[40px] h-[80px] sm:h-[100px]
-         ${isVisible
-            ? "translate-y-0 transition-transform duration-100 ease-in-out"
-            : "-translate-y-full transition-transform duration-900 ease-in-out"
-          }`}
+        className={`w-full bg-[#fff] shadow-sm fixed z-40 top-[36px]  md:top-[40px] h-[80px] sm:h-[100px]
+         ${
+           isVisible
+             ? "translate-y-0 transition-transform duration-100 ease-in-out"
+             : "-translate-y-full transition-transform duration-900 ease-in-out"
+         }`}
       >
         <div className="custom-container flex items-center justify-between px-2 py-1">
           <Link href={"/"} className="flex flex-col items-center text-center">
@@ -204,9 +202,9 @@ export default function Navbar() {
                     <span
                       className={`dm_sans capitalize font-medium ${
                         isItemActive(item.link)
-                        ? "text-[#35C0F0]"
-                        : "text-[#1A2E33]"
-                        }`}
+                          ? "text-[#35C0F0]"
+                          : "text-[#1A2E33]"
+                      }`}
                     >
                       {item.label}
                     </span>
@@ -227,9 +225,9 @@ export default function Navbar() {
                     <span
                       className={`dm_sans font-medium capitalize ${
                         isItemActive(item.link)
-                        ? "text-[#35C0F0]"
-                        : "text-[#1A2E33]"
-                        }`}
+                          ? "text-[#35C0F0]"
+                          : "text-[#1A2E33]"
+                      }`}
                     >
                       {item.label}
                     </span>
@@ -256,9 +254,9 @@ export default function Navbar() {
                           <span
                             className={`dm_sans text-[14px] font-medium capitalize ${
                               isItemActive(val.link)
-                              ? "text-[#35C0F0]"
-                              : "text-[#1A2E33]"
-                              }`}
+                                ? "text-[#35C0F0]"
+                                : "text-[#1A2E33]"
+                            }`}
                           >
                             {val.label}
                           </span>
@@ -295,12 +293,18 @@ export default function Navbar() {
             )}
             {user?.isLoggedIn && (
               <div>
-                {user?.profile?.profilePic && user?.profile?.profilePic !== "undefined" ? (
+                {user?.profile?.profilePic &&
+                user?.profile?.profilePic !== "undefined" ? (
                   <div
                     onClick={() => router.push("/profile")}
                     className="relative size-12 cursor-pointer overflow-hidden rounded-full"
                   >
-                    <Image src={user?.profile?.profilePic} fill alt="Image" className="object-cover" />
+                    <Image
+                      src={user?.profile?.profilePic}
+                      fill
+                      alt="Image"
+                      className="object-cover"
+                    />
                   </div>
                 ) : (
                   <Avatar
@@ -333,7 +337,7 @@ export default function Navbar() {
             ref={sidebarRef}
             className={`fixed top-0 right-0 h-[calc(100vh+100px)] w-80 bg-[white] shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
               isOpen ? "translate-x-0" : "translate-x-full"
-              }`}
+            }`}
           >
             <div className="flex justify-between p-4">
               <Link href={"/"} onClick={() => setIsOpen(false)}>
@@ -372,9 +376,9 @@ export default function Navbar() {
                       <span
                         className={`dm_sans font-medium capitalize ${
                           isItemActive(item.link)
-                          ? "text-[#35C0F0]"
-                          : "text-[#1A2E33]"
-                          }`}
+                            ? "text-[#35C0F0]"
+                            : "text-[#1A2E33]"
+                        }`}
                       >
                         {item.label}
                       </span>
@@ -400,9 +404,9 @@ export default function Navbar() {
                       <span
                         className={`dm_sans font-medium capitalize ${
                           isItemActive(item.link)
-                          ? "text-[#35C0F0]"
-                          : "text-[#1A2E33]"
-                          }`}
+                            ? "text-[#35C0F0]"
+                            : "text-[#1A2E33]"
+                        }`}
                       >
                         {item.label}
                       </span>
@@ -431,9 +435,9 @@ export default function Navbar() {
                           <span
                             className={`dm_sans font-medium capitalize ${
                               isItemActive(val.link)
-                              ? "text-[#35C0F0]"
-                              : "text-[#1A2E33]"
-                              }`}
+                                ? "text-[#35C0F0]"
+                                : "text-[#1A2E33]"
+                            }`}
                           >
                             {val.label}
                           </span>

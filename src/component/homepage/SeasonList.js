@@ -14,25 +14,25 @@ const data = [
     title: "Autumn Trails",
     image: "/icons/autumn.svg",
     img: "/homepage/homeseasonbanner1.webp",
-    value: "autumn-trips"
+    value: "autumn-trips",
   },
   {
     title: "Winter Peaks",
     image: "/icons/snowfall.svg",
     img: "/homepage/homeseasonbanner3.webp",
-    value: "winter-trips"
+    value: "winter-trips",
   },
   {
     title: "Monsoon Magic",
     image: "/icons/monsoon.svg",
     img: "/homepage/homeseasonbanner.webp",
-    value: "monsoon-trips"
+    value: "monsoon-trips",
   },
   {
     title: "Summer Treks",
     image: "/icons/summer.svg",
     img: "/homepage/homeseasonbanner2.webp",
-    value: "summer-trips"
+    value: "summer-trips",
   },
 ];
 
@@ -69,7 +69,7 @@ const SeasonList = () => {
   return (
     <div className="custom-container pt-6 md:pt-10 ">
       <h2 className="responsiveheading2 dm_sans text-center md:mb-5">
-        Seasons of Adventure
+        Seasonal Tours & Treks
       </h2>
 
       <div className="flex flex-col md:flex-row w-full items-center justify-center gap-6 lg:gap-10 overflow-hidden py-5">
@@ -89,7 +89,8 @@ const SeasonList = () => {
         {/* Rotating Circle Section */}
         <div className="relative md:ml-[-70px] lg:ml-[-100px] mt-[-80px] md:mt-[0px] w-[280px] sm:w-[360px] md:w-[300px] lg:w-[350px] aspect-square grid grid-cols-2 rotate-45">
           {data?.map((val, idx) => (
-            <Link href={`travel-by-season/${val.value}`}
+            <Link
+              href={`travel-by-season/${val.value}`}
               key={idx}
               // onMouseEnter={() => setSelected(idx)}
               onMouseEnter={() => {
@@ -100,21 +101,29 @@ const SeasonList = () => {
                 startRotation();
               }}
               className={`size-[100px] sm:size-[105px] md:size-[105px] lg:size-[105px] rotate-[-45deg] rounded-full p-2 cursor-pointer border-[3px] self-center justify-self-center transition-all duration-500  hover:scale-110 focus:scale-110 active:scale-110
-                ${selected === idx
-                ? "bg-[#35C0F0] border-[#35C0F0] shadow-lg"
-                : "bg-white border-[#DEF2FC]"
+                ${
+                  selected === idx
+                    ? "bg-[#35C0F0] border-[#35C0F0] shadow-lg"
+                    : "bg-white border-[#DEF2FC]"
                 }`}
             >
               <div
-                className={`size-[78px] sm:size-[85px] md:size-[85px] lg:size-[85px] rounded-full p-2 flex flex-col items-center justify-center   hover:scale-110 focus:scale-110 active:scale-110 ${selected === idx
-                  ? "border-[4px] border-white"
-                  : "border-[4px] border-[#35C0F0]"
-                  }`}
+                className={`size-[78px] sm:size-[85px] md:size-[85px] lg:size-[85px] rounded-full p-2 flex flex-col items-center justify-center   hover:scale-110 focus:scale-110 active:scale-110 ${
+                  selected === idx
+                    ? "border-[4px] border-white"
+                    : "border-[4px] border-[#35C0F0]"
+                }`}
               >
-                <Image src={val.image} alt={`season of ${val.title}`} width={28} height={28} />
+                <Image
+                  src={val.image}
+                  alt={`season of ${val.title}`}
+                  width={28}
+                  height={28}
+                />
                 <p
-                  className={`dm_sans text-center text-[12px] sm:text-[13px] leading-[15px] ${selected === idx ? "text-white" : "text-black"
-                    }`}
+                  className={`dm_sans text-center text-[12px] sm:text-[13px] leading-[15px] ${
+                    selected === idx ? "text-white" : "text-black"
+                  }`}
                 >
                   {val.title}
                 </p>

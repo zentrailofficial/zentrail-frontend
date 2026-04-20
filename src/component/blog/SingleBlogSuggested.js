@@ -1,45 +1,17 @@
 import BlogCard from "@/comman-component/blog/BlogCard";
-import CustomButton from "@/comman-component/customButton";
 import LinkButton from "@/comman-component/LinkButtton/LinkButton";
 import Link from "next/link";
 import React from "react";
 
-const blogData = [
-  {
-    id: 1,
-    image: "/blog/blog5.png",
-    date: "May 10, 2025",
-    title: "Batch Stories: Trekking to Success",
-    description: "Real experiences from our trekkers.",
-  },
-  {
-    id: 1,
-    image: "/blog/blog5.png",
-    date: "May 10, 2025",
-    title: "Batch Stories: Trekking to Success",
-    description: "Real experiences from our trekkers.",
-  },
-  {
-    id: 1,
-    image: "/blog/blog5.png",
-    date: "May 10, 2025",
-    title: "Batch Stories: Trekking to Success",
-    description: "Real experiences from our trekkers.",
-  },
-  {
-    id: 1,
-    image: "/blog/blog5.png",
-    date: "May 10, 2025",
-    title: "Batch Stories: Trekking to Success",
-    description: "Real experiences from our trekkers.",
-  },
-];
-
 const defaultContent = {
   heading: "Suggested Blogs",
-}
+};
 
-const SingleBlogSuggested = ({ suggestedBlogs, path, content = defaultContent }) => {
+const SingleBlogSuggested = ({
+  suggestedBlogs,
+  path,
+  content = defaultContent,
+}) => {
   return (
     <>
       <div className="bg-[url('/blog/section3.png')] bg-cover bg-center py-6 md:py-10">
@@ -60,7 +32,10 @@ const SingleBlogSuggested = ({ suggestedBlogs, path, content = defaultContent })
             <div className="w-full md:w-1/2 p-2 self-center flex flex-col gap-5">
               <p className="responsive-text">{`Ready to take the first step?`}</p>
               <Link href="/upcoming-trips">
-                <LinkButton text="Check Upcoming Beginner Treks" className="w-full!" />
+                <LinkButton
+                  text="Check Upcoming Beginner Treks"
+                  className="w-full!"
+                />
               </Link>
               {/* <CustomButton>
                 <Link href="/upcoming-trips">
@@ -68,7 +43,10 @@ const SingleBlogSuggested = ({ suggestedBlogs, path, content = defaultContent })
                 </Link>
               </CustomButton> */}
               <Link href={`https://wa.me/+918287316546`}>
-                <LinkButton text="Join Our WhatsApp Interest Group" className="w-full!" />
+                <LinkButton
+                  text="Join Our WhatsApp Interest Group"
+                  className="w-full!"
+                />
               </Link>
               {/* <CustomButton>
                 <Link
